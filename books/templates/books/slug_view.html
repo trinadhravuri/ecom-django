@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}-{{book.book_title}}{% endblock title %}
+
+{% block content %}
+<div class="slug-view">
+    <img src="{{book.book_image.url}}" alt="">
+    <h1>{{book.book_title}}</h1>
+    <h2>{{book.book_author}}</h2>
+    <h3>{{book.book_desc}}</h3>
+    <h4><a href="">Buy &#8377;{{book.book_price}}</a></h4>
+</div>
+{% endblock content %}

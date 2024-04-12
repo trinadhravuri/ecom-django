@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %} - Home{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '../static/css/home.css'%}">
+<h2 class="book-title">Books</h2>
+<div class="books">
+    <ul>
+    {% for book in books %}
+        <li>
+            <div class="book">
+                <a href="{% url 'single_view' book.id %}"><img src="{{book.book_image.url}}" alt=""></a>
+                <h2>{{ book.book_title|title}}</h2>
+                <h6>Author : {{book.book_author}}</h6>
+                <h4>Description : {{book.book_desc}}</h4>
+                <h4><a href="">Buy &#8377; {{book.book_price}}</a></h4>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
+
+{% block articles %}
+<h1 class="article-title">Articles</h1>
+<div class="articles">
+    <ul>
+        {% for article in articles %}
+        <li>
+            <div class="article">
+                <a href="{% url 'articles_view' article.slug %}"><img src="{{article.article_image.url}}" alt=""></a>
+                <h2>{{article.article_name}}</h2>
+                <h4>{{article.article_author}}</h4>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock articles %}

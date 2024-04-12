@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/css/base.css'%}">
+    <title>ECOM-{% block title %} {% endblock title %}</title>
+</head>
+<body>
+<!--header section starts -->
+<header>
+    <section class="header-container">
+        <div class="logo">
+            <div class="logo-img">
+                <img src="{% static '../static/images/triblog.svg' %}" alt="">
+            </div>
+        </div>
+        <div class="main-menu">
+            <ul class="main-menu-ul">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">All Books</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="login-menu">
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Sign Up</a></li>
+        </div>
+    </section>
+</header>
+<!--header section ends -->
+<!-- main section starts -->
+<br>
+{% block content %}
+{% endblock content %}
+<br>
+<!-- main section ends -->
+{% block articles %}
+{% endblock articles %}
+<br>
+<!--Footer section starts -->
+<footer>
+    <section class="footer-container">
+        <div class="logo-desc">
+            <img src="{% static '../static/images/triblog.svg'%}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, natus itaque. Officiis saepe, debitis incidunt eos, ratione minima doloremque placeat error illo et quos numquam laboriosam. Dolore labore culpa quis!</p>
+        </div>
+        <div class="used-links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">All Books</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="contact-us">
+            <h3>Contact Us</h3>
+            <p>Door No:</p>
+            <p>Building Name</p>
+            <p>Street Name Area</p>
+            <p>City</p>
+            <p>district <span>Pin code</span></p>
+            <p>State country</p>
+        </div>
+        <div class="email-contact">
+            <div class="email">
+                <p>info@triblog.com</p>
+            </div>
+            <div class="contact">
+                <p>+91-xxxxxxxxxx</p>
+            </div>
+        </div>
+        <div class="subscribe-social">
+            <div class="subscribe">
+                <input type="text">
+                <button>Subscribe</button>
+            </div>
+            <div class="social-links">
+                <p>Instagram</p>
+                <p>LinkedIn</p>
+                <p>Facebook</p>
+                <p>Twitter X</p>
+            </div>
+        </div>
+    </section>
+</footer>
+<!--Footer section ends -->    
+</body>
+</html>
